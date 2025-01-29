@@ -3,31 +3,36 @@
 
     <!-- Calculator Display Screen -->
     <div class="calc-screen">
-        <div id="calc-operation">1234 + 567 + </div>
-        <div id="calc-typed">890</div>
+        <div id="calc-operation">Output:</div>
+        <div id="calc-typed">{{result}}{{operator}}</div>
     </div>
     
     <!-- Calculator Buttons -->
     <div class="calc-button-row">
-        <button class="ac">AC</button>
-        <button class="opt">&#43;&#47;&#8722;</button>
-        <button class="opt">&#37;</button>
-        <button class="opt">&#247;</button>
-        <button>7</button>
-        <button>8</button>
-        <button>9</button>
-        <button class="opt">&#215;</button>
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
-        <button class="opt">&#8722;</button>
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button class="opt">&#43;</button>
-        <button>0</button>
-        <button>.</button>
-        <button>&#9003;</button>
-        <button class="opt">&#61;</button>
+        <button class="ac" (click)="clearCalculator()">AC</button>
+        <button class="opt" (click)="OperatorClick('+/-')">+/-</button>
+        <button class="opt" (click)="OperatorClick('%')">%</button>
+        <button class="opt" (click)="OperatorClick('/')">÷</button>
+        
+        <!-- Number Buttons -->
+        <button (click)="NumberClick('7')">7</button>
+        <button (click)="NumberClick('8')">8</button>
+        <button (click)="NumberClick('9')">9</button>
+        <button class="opt" (click)="OperatorClick('*')">&#215;</button>
+
+        <button (click)="NumberClick('4')">4</button>
+        <button (click)="NumberClick('5')">5</button>
+        <button (click)="NumberClick('6')">6</button>
+        <button class="opt" (click)="OperatorClick('-')">&#8722;</button>
+
+        <button (click)="NumberClick('1')">1</button>
+        <button (click)="NumberClick('2')">2</button>
+        <button (click)="NumberClick('3')">3</button>
+        <button class="opt" (click)="OperatorClick('+')">&#43;</button>
+
+        <button (click)="NumberClick('0')">0</button>
+        <button (click)="NumberClick('.')">.</button>
+        <button (click)="Backspace()">&#9003;</button>
+        <button class="opt" (click)="findResult()">&#61;</button>
     </div>
-    </div>
+</div>
